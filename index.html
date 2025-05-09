@@ -8,8 +8,52 @@
   <title>Document</title>
 </head>
 <body>
-  <input type="text" id="input" placeholder="Enter your name">
-  <button onclick="envoyer()" id='btn'>Envoyer</button>
+  <h1>Carte étudiant</h1>
+  <form id='formulaire'>
+
+  
+    <label for="nom">Nom :</label>
+    <input type="text" id="nom" name="nom">
+    <br><br>
+
+    
+    <label for="prenom">Prénom :</label>
+    <input type="text" id="prenom" name="prenom">
+    <br><br>
+
+    
+    <label for="dateNaissance">Date de naissance :</label>
+    <input type="date" id="dateNaissance" name="dateNaissance">
+    <br><br>
+
+  
+    <label for="lieuNaissance">Lieu de naissance :</label>
+    <select id="lieuNaissance" name="lieuNaissance">
+      <option value="Bejaia">Béjaïa</option>
+      <option value="TiziOuzou">Tizi Ouzou</option>
+    </select>
+    <br><br>
+
+    
+    <label for="universite">Université :</label>
+    <select id="universite" name="universite">
+      <option value="UAMB">Université de Béjaïa (UAMB)</option>
+      <option value="UMMTO">Université de Tizi Ouzou (UMMTO)</option>
+    </select>
+    <br><br>
+
+    
+    <label for="filiere">Filière :</label>
+    <select id="filiere" name="filiere">
+    
+    </select>
+    <br><br>
+
+    
+    <button type="submit">Soumettre</button>
+    <button type="reset">Réinitialiser</button>
+
+  </form>
   
 
 
