@@ -18,7 +18,6 @@ filieres.forEach(function(filiere) {
   selectionFiliere.appendChild(option);
 });
 
-
 document.getElementById("formulaire").addEventListener("submit", function(event) {
     event.preventDefault();
 
@@ -75,27 +74,42 @@ function verifierNomOuPrenom(texte) {
         return avantTiret > 0;
     }
 }
-document.getElementById("dateNaissance").addEventListener("submit", function(event) {
-  event.preventDefault();
-let dateNaissance = document.getElementById("dateNaissance").value;
-let naissance = new Date(dateNaissance);
-let aujourdHui = new Date();
+document.getElementById("formulaire").addEventListener("submit", function(event) {
+    event.preventDefault();
 
-let age = aujourdHui.getFullYear() - naissance.getFullYear();
+    const nom = document.getElementById("nom").value.trim();
+    const prenom = document.getElementById("prenom").value.trim();
+    const dateNaissance = document.getElementById("dateNaissance").value;
 
-if (
-  aujourdHui.getMonth() < naissance.getMonth() ||
-  (aujourdHui.getMonth() === naissance.getMonth() && aujourdHui.getDate() < naissance.getDate())
-) {
-  age = age - 1;
-}
+    if (nom.length > 24 || !verifierNomOuPrenom(nom)) {
+        alert("Le nom n'est pas valide.");
+        return;
+    }
 
-if (age < 18) {
-  alert("Vous avez seulement " + age + " ans. Il faut avoir au moins 18 ans.");
-} else {
-  alert("Âge valide : " + age + " ans.");
-}
+    if (prenom.length > 24 || !verifierNomOuPrenom(prenom)) {
+        alert("Le prénom n'est pas valide.");
+        return;
+    }
 
+    let naissance = new Date(dateNaissance);
+    let aujourdHui = new Date();
+    let age = aujourdHui.getFullYear() - naissance.getFullYear();
 
+    if ( aujourdHui.getMonth() < naissance.getMonth() || (aujourdHui.getMonth() === naissance.getMonth() && aujourdHui.getDate() < naissance.getDate())
+    ) {
+        age = age - 1;
+    }
 
+    if (age < 18) {
+        alert("Vous avez seulement " + age + " ans. Il faut avoir au moins 18 ans.");
+        return;
+    }
+
+    const facultes = {
+      se: "Faculté des Sciences Exactes",
+      st: "Faculté de Technologie",
+      ll: "Faculté des Lettres et des Langues"
+    };
+    
+});
 
