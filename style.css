@@ -1,3 +1,25 @@
 h1{
   text-align: center;
 }
+.carte {
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 8px;
+  color: #fff;
+  width: 300px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.carte.intern {
+  background-color: violet;
+}
+
+.carte.extern {
+  background-color: blue;
+}
+
+/* Cache initiale */
+.cache {
+  display: none;
+}
