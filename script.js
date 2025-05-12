@@ -74,7 +74,7 @@ function verifierNomOuPrenom(texte) {
         return avantTiret > 0;
     }
 }
-document.getElementById("formulaire").addEventListener("submit", function(event) {
+document.getElementById("formulaire").addEventListener("submit", function(event) { 
     event.preventDefault();
 
     const nom = document.getElementById("nom").value.trim();
@@ -93,23 +93,62 @@ document.getElementById("formulaire").addEventListener("submit", function(event)
 
     let naissance = new Date(dateNaissance);
     let aujourdHui = new Date();
+   
     let age = aujourdHui.getFullYear() - naissance.getFullYear();
-
+    
     if ( aujourdHui.getMonth() < naissance.getMonth() || (aujourdHui.getMonth() === naissance.getMonth() && aujourdHui.getDate() < naissance.getDate())
     ) {
         age = age - 1;
     }
 
+
     if (age < 18) {
         alert("Vous avez seulement " + age + " ans. Il faut avoir au moins 18 ans.");
         return;
     }
-
-    const facultes = {
-      se: "Faculté des Sciences Exactes",
-      st: "Faculté de Technologie",
-      ll: "Faculté des Lettres et des Langues"
-    };
+    else{
+        alert("Vous avez " + age + " ans. Vous pouvez vous inscrire.");
+    }
     
 });
+// Facultés : code → nom complet
+const facultes = {
+  se: "Faculté des Sciences Exactes",
+  st: "Faculté de Technologie",
+  ll: "Faculté des Lettres et des Langues"
+};
+
+// Filières : code de filière → code de faculté
+const filiere = {
+  mat: "se",
+  inf: "se",
+  aut: "st",
+  tel: "st",
+  fra: "ll",
+  ang: "ll"
+};
+
+// Fonction pour obtenir la faculté selon le code filière
+function obtenirFaculte(codeFiliere) {
+  const codeFaculte = filiere[codeFiliere];
+  return facultes[codeFaculte] || "Faculté inconnue";
+    }
+
+    // Gestion du formulaire
+    document.getElementById("formulaire").addEventListener("submit", function(e){
+        e.preventDefault();
+      const codeFiliere = document.getElementById("filiere").value;
+      const nomFaculte = obtenirFaculte(codeFiliere);
+
+      alert("Vous êtes inscrit à : " + nomFaculte);
+           });
+
+
+
+
+
+
+
+
+
 
