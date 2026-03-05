@@ -1,25 +1,125 @@
-h1{
-  text-align: center;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
 }
+
+body {
+
+    background-color: #f4f5f8;
+}
+
+
+form {
+    background: white;
+    margin: 2rem auto;
+    padding: 2rem;
+    width: 550px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+
+form br {
+    display: none;
+}
+
+label {
+    display: inline-block;
+    width: 180px;
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+    font-weight: 500;
+}
+
+input,
+select {
+    width: calc(100% - 190px);
+    padding: 8px;
+    margin-bottom: 1.2rem;
+    border: 1px solid #777;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+
+button {
+    padding: 8px 16px;
+    font-size: 1.1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button[type="submit"] {
+    background-color: #8e24aa;
+    color: white;
+    border: none;
+    box-shadow: 0 0 15px rgba(142, 36, 170, 0.6);
+    margin-right: 10px;
+    transition: transform 0.2s;
+}
+
+button[type="submit"]:active {
+    transform: scale(0.95);
+}
+
+button[type="reset"] {
+    background-color: #f0f0f0;
+    color: black;
+    border: 1px solid #555;
+}
+
+
+@keyframes glissementHaut {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
 .carte {
-  margin-top: 30px;
-  padding: 20px;
-  border-radius: 8px;
-  color: #fff;
-  width: 300px;
-  font-size: 14px;
-  font-weight: bold;
+    display: none;
+    background: linear-gradient(135deg, #7f00ff, #e100ff);
+    color: white;
+    border-radius: 1rem;
+    padding: 2rem 0 4rem 0;
+    width: 700px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    margin: 4rem auto;
+
+
+    animation: glissementHaut 0.6s ease-out forwards;
 }
 
-.carte.intern {
-  background-color: violet;
+.externe {
+    background: linear-gradient(135deg, #5b86e5, #36d1dc);
 }
 
-.carte.extern {
-  background-color: blue;
+h2 {
+    background: black;
+    color: white;
+    padding: .5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    text-transform: uppercase;
 }
 
-/* Cache initiale */
-.cache {
-  display: none;
+ul {
+    padding-left: 3rem;
+    line-height: 1.6;
+}
+
+img {
+    display: block;
+    margin: 0 auto 2rem auto;
+    max-height: 80px;
+    width: auto;
 }

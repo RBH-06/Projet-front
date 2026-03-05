@@ -1,65 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>Document</title>
-</head>
-<body>
-  <h1>Carte étudiant</h1>
-  <form id='formulaire'>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Test TP 2</title>
 
-  
-    <label for="nom">Nom :</label>
-    <input type="text" id="nom" name="nom">
-    <br><br>
+        <link href="style.css" rel="stylesheet">
 
-    
-    <label for="prenom">Prénom :</label>
-    <input type="text" id="prenom" name="prenom">
-    <br><br>
+        <style>header { text-align : center; padding : 1rem; }</style>
+    </head>
+    <body>
+        <header>
+            <h1>Test TP 2 - DAWEB</h1>
+        </header>
 
-    
-    <label for="dateNaissance">Date de naissance :</label>
-    <input type="date" id="dateNaissance" name="dateNaissance">
-    <br><br>
+        <hr>
 
-  
-    <label for="lieuNaissance">Lieu de naissance :</label>
-    <select id="lieuNaissance" name="lieuNaissance">
-      <option value="Bejaia">Béjaïa</option>
-      <option value="TiziOuzou">Tizi Ouzou</option>
-    </select>
-    <br><br>
+        <form>
+            <label for="nom">Nom</label>
+            <input type="text" id="nom" name="nom"/>
+            <br>
 
-    
-    <label for="universite">Université :</label>
-    <select id="universite" name="universite">
-      <option value="UAMB">Université de Béjaïa (UAMB)</option>
-      <option value="UMMTO">Université de Tizi Ouzou (UMMTO)</option>
-    </select>
-    <br><br>
+            <label for="prenom">Prénom</label>
+            <input type="text" id="prenom" name="prenom"/>
+            <br>
 
-    
-    <label for="filiere">Filière :</label>
-    <select id="filiere" name="filiere">
-    
-    </select>
-    <br><br>
+            <label for="date">Date de naissance</label>
+            <input type="date" id="date" name="date"/>
+            <br>
 
-    
-    <button type="submit">Soumettre</button>
-    <button type="reset">Réinitialiser</button>
+            <label for="lieu">Lieu de naissance</label>
+            <select name="lieu" id="lieu">
+                <option value="bejaia">Béjaïa</option>
+                <option value="tizi">Tizi-Ouzou</option>
+            </select>
+            <br>
 
-  </form>
-  
-  <div id="carte" class="carte" style=display: none;></div>
+            <label for="univ">Université</label>
+            <select name="univ" id="univ">
+                <option value="bejaia">Université de Béjaïa (UAMB)</option>
+                <option value="tizi">Université de Tizi-Ouzou (UMMTO)</option>
+            </select>
+            <br>
 
+            <label for="fillieres">Fillière</label>
+            <select name="fillieres" id="fillieres">
+            </select>
+            <br>
 
+            <button type="submit">Génerer ma carte</button>
+            <button type="reset">Réinitialiser</button>
+        </form>
 
-    
-      <script src="script.js"></script>  
-</body>
+        <article id="carte" class="carte">
+            <img id="carte-logo">
+            <h2 id="carte-titre"></h2>
+            <ul>
+                <li><strong>Nom :</strong> <span id="carte-nom"></span></li>
+                <li><strong>Prénom :</strong> <span id="carte-prenom"></span></li>
+                <li><strong>Date de naissance :</strong> <span id="carte-date"></span></li>
+                <li><strong>Lieu de naissance :</strong> <span id="carte-lieu"></span></li>
+                <li><strong>Filière :</strong> <span id="carte-filliere"></span></li>
+                <li><strong>Faculté :</strong> <span id="carte-faculte"></span></li>
+                <li><strong>Grade :</strong> <span id="carte-grade"></span></li>
+                <li><strong>Année universitaire :</strong> <span id="carte-annee"></span></li>
+            </ul>
+        </article>
+
+        <script src="script.js"></script>
+    </body>
 </html>
