@@ -1,4 +1,4 @@
-#  Générateur de Carte Étudiant (Test TP 2 - DAWEB)
+#  Générateur de Carte Étudiant
 
 Un projet web interactif permettant de générer une carte étudiant dynamique et stylisée à partir d'un formulaire. Ce projet a été réalisé en utilisant uniquement les technologies web standards (Vanilla).
 
