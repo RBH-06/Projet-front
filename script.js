@@ -41,51 +41,29 @@ const deductionAge = date => {
 };
 
 const verification = utilisateur => {
-    const estUneLettre = c => ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
-
     const validite = chaine => {
-        let possedeUnTiret     = false;
+        if (chaine.length > 24) return false;
+        const regex = /^[a-zA-Z]+(-[a-zA-Z]+)?$/;
+        return regex.test(chaine);
+    };
 
-        for (let i = 0; i  < chaine.length; i++) {
-            if (i >= 24)
-                return false;
-
-            if (chaine[i] === '-') {
-                if (i === 0 || i === chaine.length - 1)
-                    return false;
-
-                if (!possedeUnTiret) {
-                    possedeUnTiret = true;
-                    continue;
-                } else
-                    return false;
-            }
-
-            if (!estUneLettre(chaine[i]))
-                return false;
-        }
-
-        return true;
-    }
-
-    const prenomEstValide = validite(utilisateur.nom);
-    const nomEstValide    = validite(utilisateur.prenom);
+  
+    const nomEstValide    = validite(utilisateur.nom);
+    const prenomEstValide = validite(utilisateur.prenom);
     const aPlusDe18ans    = utilisateur.age >= 18;
 
-    if (!nomEstValide)
-    {
+    
+    if (!nomEstValide) {
         alert("Nom invalide, le nom doit seulement contenir des lettres ou un tiret, et ne doit pas faire plus de 24 caractères.");
         return false;
     }
 
-    if (!prenomEstValide)
-    {
+    if (!prenomEstValide) {
         alert("Prénom invalide, le prénom doit seulement contenir des lettres ou un tiret, et ne doit pas faire plus de 24 caractères.");
         return false;
     }
 
-    if (!aPlusDe18ans)
-    {
+    if (!aPlusDe18ans) {
         alert("Vous devez être majeur pour avoir une carte !");
         return false;
     }
